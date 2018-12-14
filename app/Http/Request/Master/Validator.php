@@ -8,10 +8,11 @@ class Validator extends Request
 {
     public function rules()
     {
+
         if ($this->has('_method')) {
             $rules = [
               'name'       => 'required',
-              'email'      => 'required|unique:users,email,'.$this->get('testing')
+              'email'      => 'required|unique:users,email,'.$this->get('id_user')
             ];
 
             return $rules;

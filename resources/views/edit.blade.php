@@ -21,7 +21,7 @@
       @endif
       <form action="{{ route('testing.update', ['id' => $data->id]) }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <input type="hidden" name="testing" value="{{ $data->email }}">
+        <input type="hidden" name="id_user" value="{{ $data->id }}">
         <input type="hidden" name="_method" value="PUT">
         Name
         <input type="text" name="name" placeholder="name" value="{{ $data->name }}">
