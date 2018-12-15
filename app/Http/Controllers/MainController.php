@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Request\Master\Validator;
+use Repositories\Master\MainRepository;
 
 class MainController extends Controller
 {
-    public function __construct(User $user) {
-      $this->user = $user;
+    protected $mainRepository;
+    public function __construct(User $user, MainRepository $mainRepository) {
+      $this->user            = $user;
+      $this->mainRepository = $mainRepository;
     }
 
     public function index() {
-      $data['collection'] = $this->user->paginate(3);
+      $data['collection'] = $this->mainRepository->all('paginate', 2);
       return view('welcome', compact('data'));
     }
 
