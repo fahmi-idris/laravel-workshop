@@ -14,10 +14,13 @@
     <body>
       <form>
         Name
-        <input type="text" name="name" placeholder="name" value="{{ $data->name }}">
+        <input type="text" name="name" placeholder="name" value="{{ $data['collection']->name }}">
         <br>
         Email
-        <input type="text" name="email" placeholder="email" value="{{ $data->email }}">
+        <input type="text" name="email" placeholder="email" value="{{ $data['collection']->email }}">
+        <br>
+        Phone
+        <input type="text" name="email" placeholder="email" value="{{ ($data['phone']) ? $data['phone']->phone : '-' }}">
       </form>
     </body>
 </html>

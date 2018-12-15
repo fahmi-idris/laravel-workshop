@@ -6,6 +6,11 @@ use App\Http\Request\Request;
 
 class Validator extends Request
 {
+
+    public function authorize() {
+      return true;
+    }
+
     public function rules()
     {
 
