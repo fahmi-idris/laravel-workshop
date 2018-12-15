@@ -22,5 +22,19 @@
         Phone
         <input type="text" name="email" placeholder="email" value="{{ ($data['phone']) ? $data['phone']->phone : '-' }}">
       </form>
+      @if(count($data['products']))
+        <table>
+          <tr>
+            <th>Nama Produk</th>
+            <th>Kuantiti</th>
+          </tr>
+          @foreach($data['products'] as $item)
+          <tr>
+            <td>{{ $item->product_name }}</td>
+            <td>{{ $item->quantity }}</td>
+          </tr>
+          @endforeach
+        </table>
+      @endif
     </body>
 </html>

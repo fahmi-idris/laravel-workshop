@@ -14,4 +14,9 @@ class User extends Model
     {
         return $this->hasOne('App\Phone', 'user_id');
     }
+
+    public function product()
+  	{
+  		return $this->hasMany('App\Product', 'user_id', 'id');
+  	}
 }

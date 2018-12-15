@@ -32,6 +32,7 @@ class MainController extends Controller
     public function show($id) {
       $data['collection'] = User::find($id);
       $data['phone'] = $data['collection']->phone;
+      $data['products'] = $data['collection']->product;
       return view('show', compact('data'));
     }
 
